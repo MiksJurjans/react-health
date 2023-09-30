@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/react-health/static/js/main.c7a28069.js",
+    "static/media/background.png": "/react-health/static/media/background.f1e58420a6cece30e671.png",
+    "static/media/male.jpg": "/react-health/static/media/male.74803ff830589c81ed9f.jpg",
+    "static/media/female.jpg": "/react-health/static/media/female.8ac8c7cf98fae7592f39.jpg",
+    "static/media/stool_type.jpg": "/react-health/static/media/stool_type.f86ad016c744cff42d4e.jpg",
+    "static/media/Laivina_temp_logo.png": "/react-health/static/media/Laivina_temp_logo.5881f70c1b00d0bd51bb.png",
+    "index.html": "/react-health/index.html",
+    "main.c7a28069.js.map": "/react-health/static/js/main.c7a28069.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c7a28069.js"
+  ]
+}
