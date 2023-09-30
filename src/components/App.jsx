@@ -31,7 +31,7 @@ function App() {
   const handleStartQuestionnaire = () => {
     if (userName !== "") {
       // When the "Start questionnaire!" button is clicked, set the current question index to 0 to start the questionnaire
-      setCurrentQuestionIndex(97);
+      setCurrentQuestionIndex(0);
       setQuestionnaireStarted(true);
     } else {
       alert("Please enter your name!");

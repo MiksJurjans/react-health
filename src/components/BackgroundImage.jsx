@@ -11,11 +11,22 @@ function BackgroundImage() {
     backgroundPosition: "60% 40%",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "250px" // Set the height as needed
+    height: "250px",
+    width: "100%",
+    position: "relative"
+  };
+
+  const logoStyle = {
+    position: "absolute",
+    top: "10px",
+    left: "10px",
+    transform: "translate(0%, 0%)",
+    maxWidth: "30%", // positioning the logo
+    maxHeight: "30%", // positioning the logo
   };
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} style={{ height: "250px", width: "100%" }}>
       <Grid item xs={12}>
         <Card>
           <CardMedia style={backgroundImageStyle} />
@@ -23,11 +34,7 @@ function BackgroundImage() {
             src={logoImg}
             alt="Logo"
             className="logo"
-            style={{
-              position: "aboslute",
-              top: "10px",
-              transform: "translate(0%, 0%)"
-            }}
+            style={logoStyle}
           />
         </Card>
       </Grid>
