@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.image {
+  width: 600px;
+  height: 400px;
+}
+
+.logo {
+  position: absolute;
+  top: 120px; /* Adjust the top position as needed */
+  left: 40px; /* Adjust the left position as needed */
+  width: 300px; /* Adjust the logo width as needed */
+  z-index: 2; /* Ensure the logo appears above the background image */
+}
+
+@font-face {
+  font-family: "Sectra"; /* You can choose any font name you like */
+  src: url("./fonts/file.otf") format("opentype"); /* Path to your font file */
+}
+
+@font-face {
+  font-family: "Graphik"; /* You can choose any font name you like */
+  src: url("./fonts/file.ttf") format("truetype"); /* Path to your font file */
+}

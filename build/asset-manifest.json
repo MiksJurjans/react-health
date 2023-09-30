@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/React_questionnaire/static/js/main.93c5c0ff.js",
+    "static/media/background.png": "/React_questionnaire/static/media/background.f1e58420a6cece30e671.png",
+    "static/media/male.jpg": "/React_questionnaire/static/media/male.74803ff830589c81ed9f.jpg",
+    "static/media/female.jpg": "/React_questionnaire/static/media/female.8ac8c7cf98fae7592f39.jpg",
+    "static/media/stool_type.jpg": "/React_questionnaire/static/media/stool_type.f86ad016c744cff42d4e.jpg",
+    "static/media/Laivina_temp_logo.png": "/React_questionnaire/static/media/Laivina_temp_logo.5881f70c1b00d0bd51bb.png",
+    "index.html": "/React_questionnaire/index.html",
+    "main.93c5c0ff.js.map": "/React_questionnaire/static/js/main.93c5c0ff.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.93c5c0ff.js"
+  ]
+}
