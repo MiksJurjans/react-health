@@ -57,6 +57,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -68,7 +69,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>
@@ -118,6 +119,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -129,7 +131,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>
@@ -164,6 +166,7 @@ const QuestionRenderer = (props) => {
                 onAnswerChange={props.onAnswerChange}
                 comment={props.comment}
                 onCommentChange={props.onCommentChange}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -178,6 +181,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -189,7 +193,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>
@@ -215,6 +219,7 @@ const QuestionRenderer = (props) => {
               onAnswerChange={props.onAnswerChange}
               comment={props.comment}
               onCommentChange={props.onCommentChange}
+              selectedLanguage={props.selectedLanguage}
             />
             <Box
               component="form"
@@ -228,6 +233,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -239,7 +245,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>
@@ -280,6 +286,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -291,7 +298,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>
@@ -332,6 +339,7 @@ const QuestionRenderer = (props) => {
                 question={props.question}
                 onCommentChange={props.onCommentChange}
                 value={props.comment}
+                selectedLanguage={props.selectedLanguage}
               />
             </Box>
             <Box
@@ -343,7 +351,7 @@ const QuestionRenderer = (props) => {
                 marginTop: "36px" // Add margin between this group and the next
               }}
             >
-              <MyButton onClick={props.onQuestionChange} buttonText="Next" />
+              <MyButton onClick={props.onQuestionChange} buttonText={props.selectedLanguage === "eng" ? "Next" : "Tālāk"} />
             </Box>
           </Box>
         </div>

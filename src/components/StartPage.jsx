@@ -4,8 +4,14 @@ import BackgroundImage from "./BackgroundImage";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import MyButton from "./Button";
+import LanguageSelector from "./LanguageSelector";
+import StartPageText from "./StartPageText";
 
 const StartPage = (props) => {
+
+  const headingText = StartPageText.find((element) => element.type === "heading")[props.selectedLanguage];
+  const bodyText = StartPageText.find((element) => element.type === "body")[props.selectedLanguage];
+
   return (
     <div>
       <BackgroundImage />
@@ -19,28 +25,30 @@ const StartPage = (props) => {
         }}
       >
         <Typography
-          variant="h5"
           style={{
             fontFamily: "Sectra",
             fontSize: "24pt",
             fontWeight: 600,
-            margin: "16pt 0"
+            marginTop: "16pt"
           }}
         >
-          Welcome to my health assessment quiz
+          {headingText}
         </Typography>
         <Typography
-          variant="body1"
-          style={{ fontFamily: "Graphik", fontSize: "16pt", margin: "16pt 0" }}
+          style={{
+            fontFamily: "Graphik",
+            fontSize: "14pt",
+            marginBottom: "16pt"
+          }}
         >
-          In this quiz you will have to answer to questions about ...
+          {bodyText}
         </Typography>
 
         <TextField
           key="name_id"
           name="user_name"
           value={props.userName}
-          label="Your name:"
+          label={props.selectedLanguage === "eng" ? "Your name:" : "Tavs vārds:"}
           onChange={(event) => {
             const userName = event.target.value;
             props.onNameChange(event, userName);
@@ -65,11 +73,25 @@ const StartPage = (props) => {
             marginTop: "20px" // Add margin between this group and the next
           }}
         >
-          <MyButton onClick={props.onClick} buttonText="Start questionnaire" />
+          <MyButton onClick={props.onClick} buttonText={props.selectedLanguage === "eng" ? "Start questionnaire" : "Sākt aptauju"}/>
         </Box>
+      </Box>
+
+      <Box
+        sx={{
+          position: "absolute", // Fixed position
+          top: 208, // Place it at the bottom
+          left: "auto", // Place it at the right
+          bottom: 10, // Adjust the bottom spacing
+          right: 24, // Adjust the right spacing
+          zIndex: 1000, // Ensure it's above other content
+        }}
+      >
+        <LanguageSelector onSelectLanguage={props.onSelectLanguage} />
       </Box>
     </div>
   );
 };
+
 
 export default StartPage;

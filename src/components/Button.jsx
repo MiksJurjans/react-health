@@ -11,7 +11,7 @@ const MyButton = (props) => {
     cursor: "pointer",
     transition: "background-color 0.3s, color 0.3s",
     border: "1px solid #D9D9D9",
-    fontFamily: "Graphik",
+    fontFamily: "Sectra",
     fontSize: "12pt",
     height: "50px",
     fontWeight: 900

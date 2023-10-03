@@ -14,14 +14,14 @@ const MultipleChoiceQuestions = (props) => {
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <InputLabel id={`${props.question.label}-label`}>
-              Select option:
+            {props.selectedLanguage === "eng" ? "Select option:" : "Izvēlies atbildi:"}
             </InputLabel>
             <Select
               name={props.question.identifier}
               id={props.question.identifier}
               value={props.answer}
               labelId={`${props.question.label}-label`}
-              label="Select Option:"
+              label={props.selectedLanguage === "eng" ? "Select option:" : "Izvēlies atbildi:"}
               sx={{
                 fontFamily: "Graphik",
                 fontSize: "12pt",
@@ -38,7 +38,7 @@ const MultipleChoiceQuestions = (props) => {
               }}
             >
               <MenuItem value="" disabled>
-                Select Option:
+              {props.selectedLanguage === "eng" ? "Select option:" : "Izvēlies atbildi:"}
               </MenuItem>
               {props.question.options.map((option) => (
                 <MenuItem key={option.value} value={option.value}>

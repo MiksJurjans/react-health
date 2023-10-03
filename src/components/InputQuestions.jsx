@@ -26,7 +26,12 @@ const InputQuestion = (props) => {
     if (isOutlinedInput) {
       // Check if the input is not a number
       if (isNaN(selectedAnswer)) {
-        alert("Please enter number, instead of text");
+        if (props.selectedLanguage === "eng") {
+          alert("Please enter number, instead of text and use a dot to separate decimal values");
+        }
+        else {
+          alert("Lūdzu ievadiet skaitli, nevis tekstu un izmanto punktu, lai atdalītu decimāldaļas");
+        }
       } else {
         props.onAnswerChange(event, selectedAnswer);
       }
@@ -63,7 +68,7 @@ const InputQuestion = (props) => {
           key={props.question.identifier}
           name={props.question.identifier}
           value={props.answer}
-          label="Your answer:"
+          label={props.selectedLanguage === "eng" ? "Your answer:" : "Tava atbilde:"}
           onChange={(event) => {
             const selectedAnswer = event.target.value;
             props.onAnswerChange(event, selectedAnswer);

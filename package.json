@@ -1,7 +1,7 @@
 {
   "name": "health-questionnaire",
   "version": "1.0.0",
-  "homepage": "https://MiksJurjans.github.io/React_questionnaire",
+  "homepage": "https://MiksJurjans.github.io/react-health",
   "description": "",
   "keywords": [],
   "main": "src/index.js",

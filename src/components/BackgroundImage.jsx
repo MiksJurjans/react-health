@@ -21,8 +21,8 @@ function BackgroundImage() {
     top: "10px",
     left: "10px",
     transform: "translate(0%, 0%)",
-    maxWidth: "30%", // positioning the logo
-    maxHeight: "30%", // positioning the logo
+    maxWidth: "400px",
+    maxHeight: "400px",
   };
 
   return (

@@ -15,8 +15,8 @@ const RadioQuestion = (props) => {
       {props.question.identifier === "q58" && props.gender === "Female" && (
         <CardMedia
           component="img"
-          width="450"
-          height="300"
+          width="460"
+          height="400"
           image={femaleImg}
           alt="Female"
         />
@@ -24,8 +24,8 @@ const RadioQuestion = (props) => {
       {props.question.identifier === "q58" && props.gender === "Male" && (
         <CardMedia
           component="img"
-          width="450"
-          height="300"
+          width="460"
+          height="400"
           image={maleImg}
           alt="Male"
         />
@@ -33,8 +33,8 @@ const RadioQuestion = (props) => {
       {props.question.identifier === "q61" && (
         <CardMedia
           component="img"
-          width="400"
-          height="300"
+          width="460"
+          height="400"
           image={stoolImg}
           alt="Stool"
         />

@@ -1,8 +1,3 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .image {
   width: 600px;
   height: 400px;
@@ -17,11 +12,11 @@
 }
 
 @font-face {
-  font-family: "Sectra"; /* You can choose any font name you like */
-  src: url("./fonts/file.otf") format("opentype"); /* Path to your font file */
+  font-family: "Sectra"; 
+  src: url("./fonts/file.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Graphik"; /* You can choose any font name you like */
-  src: url("./fonts/file.ttf") format("truetype"); /* Path to your font file */
+  font-family: "Graphik"; 
+  src: url("./fonts/file.ttf") format("truetype"); 
 }

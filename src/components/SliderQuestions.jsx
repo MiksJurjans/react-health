@@ -31,7 +31,7 @@ function SliderQuestion(props) {
           key={props.question.identifier}
           defaultValue={props.sliderValue}
           getAriaValueText={valuetext}
-          step={10}
+          step={5}
           marks={marks}
           valueLabelDisplay="on"
           onChange={(_, newValue) => props.onSliderChange(newValue)}

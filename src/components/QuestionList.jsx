@@ -1327,7 +1327,8 @@ const QuestionList = [
   {
     category: "medical history",
     label: "Question 92",
-    text: "Do you have any allergies?",
+    text: "Do you regularly use supplements?",
+    note: "*If so, please name them in the comment section",
     type: "radio",
     identifier: "q92",
     options: { Yes: "1", No: "5" },
@@ -1337,28 +1338,29 @@ const QuestionList = [
   {
     category: "medical history",
     label: "Question 93",
-    text:
-      "Has any of your family members suffered from heart attack or stroke?",
+    text: "Do you have any allergies?",
+    note: "*If so, please name them in the comment section",
     type: "radio",
     identifier: "q93",
-    options: { Yes: "1", No: "5" },
-    weight: "2"
-  },
-
-  {
-    category: "medical history",
-    label: "Question 94",
-    text: "Has any of your family members suffered from cancer?",
-    type: "radio",
-    identifier: "q94",
     options: { Yes: "1", No: "5" },
     weight: "1"
   },
 
   {
     category: "medical history",
+    label: "Question 94",
+    text:
+      "Has any of your family members suffered from heart attack or stroke?",
+    type: "radio",
+    identifier: "q94",
+    options: { Yes: "1", No: "5" },
+    weight: "2"
+  },
+
+  {
+    category: "medical history",
     label: "Question 95",
-    text: "Has any of your family members suffered from diabetes?",
+    text: "Has any of your family members suffered from cancer?",
     type: "radio",
     identifier: "q95",
     options: { Yes: "1", No: "5" },
@@ -1368,8 +1370,7 @@ const QuestionList = [
   {
     category: "medical history",
     label: "Question 96",
-    text:
-      "Has any of your family members suffered from Alzheimers, Parkinsons or Dementia?",
+    text: "Has any of your family members suffered from diabetes?",
     type: "radio",
     identifier: "q96",
     options: { Yes: "1", No: "5" },
@@ -1379,9 +1380,20 @@ const QuestionList = [
   {
     category: "medical history",
     label: "Question 97",
+    text:
+      "Has any of your family members suffered from Alzheimers, Parkinsons or Dementia?",
+    type: "radio",
+    identifier: "q97",
+    options: { Yes: "1", No: "5" },
+    weight: "1"
+  },
+
+  {
+    category: "medical history",
+    label: "Question 98",
     text: "How often do you get sick or have a cold?",
     type: "select_choice",
-    identifier: "q97",
+    identifier: "q98",
     options: [
       { label: "Once a month or more often", value: "1" },
       { label: "Every other month", value: "2" },
@@ -1393,11 +1405,11 @@ const QuestionList = [
 
   {
     category: "medical history",
-    label: "Question 98",
+    label: "Question 99",
     text:
       "From 0 % being the worst and 100 % being the best: How would you rate your health?",
     type: "slider",
-    identifier: "q98"
+    identifier: "q99"
   }
 ];
 

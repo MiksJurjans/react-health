@@ -1,0 +1,12 @@
+
+@font-face {
+  font-family: "Sectra"; 
+  src: url("./fonts/file.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik"; 
+  src: url("./fonts/file.ttf") format("truetype"); 
+}
+
+li {margin:10pt}

@@ -19,7 +19,7 @@ function Comment(props) {
         }
       }}
       variant="outlined"
-      label="Your comment:"
+      label={props.selectedLanguage === "eng" ? "Your comment:" : "Tavs komentārs:"}
     />
   );
 }

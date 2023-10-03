@@ -25,6 +25,7 @@ export default function ReferenceDateExplicitTimePicker(props) {
             fontSize: "12pt",
             width: "200px" // Adjust the width as needed
           }}
+          ampm={false} // Set ampm to false for 24-hour clock
         />
       </Stack>
     </LocalizationProvider>

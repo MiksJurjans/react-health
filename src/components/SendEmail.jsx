@@ -3,20 +3,38 @@ import Typography from "@mui/material/Typography";
 import BackgroundImage from "./BackgroundImage";
 import Box from "@mui/material/Box";
 import MyButton from "./Button";
+import FinalPageText from "./FinalPageText";
+import Checkbox from "@mui/material/Checkbox";
 
 function SendEmail(props) {
-  const handleSendEmail = () => {
-    // Create a new email using the "mailto:" URL scheme
-    const emailSubject = "Health assessment results";
-    const emailBody = "Hey, Elizabete. Here are the results of my assessment!";
-    const emailRecipient = "miksjurjans18@gmail.com"; // Change this to the recipient's email address
 
-    const mailtoURL = `mailto:${emailRecipient}?subject=${encodeURIComponent(
-      emailSubject
-    )}&body=${encodeURIComponent(emailBody)}`;
+  const [isChecked, setIsChecked] = useState(false);
+
+  const headingText = FinalPageText.find((element) => element.type === "heading")[props.selectedLanguage];
+  const bodyText = FinalPageText.find((element) => element.type === "body")[props.selectedLanguage];
+
+  const handleSendEmail = () => {
+
+    // Check if the checkbox is checked before proceeding
+    if (!isChecked) {
+      if (props.selectedLanguage === "eng"){
+        alert("Please agree to the Terms and Conditions.");
+        return;}
+      else {
+        alert("Lūdzu apstiprini lietošanas noteikumus un datu privātumu politiku.");
+        return;  
+      }
+    }
+    
+    // Create a new email using the "mailto:" URL scheme
+    const emailSubject = props.selectedLanguage === "eng" ? "Health assessment results" : "Aptaujas rezultāti";
+    const emailBody = props.selectedLanguage === "eng" ? "Hey, Elizabete. Here are the results of my assessment " : "Hey, Elizabete! Šeit ir mani aptaujas rezultāti.";
+    const emailRecipient = "elizabete@laivina.com";
+
+    const mailtoURL = `mailto:${emailRecipient}?subject=${emailSubject}&body=${emailBody}`;
 
     // Attach the selected file to the email
-    const emailToSend = `${mailtoURL}`;
+    const emailToSend = encodeURI(mailtoURL);
 
     // Open the user's default email client with the pre-filled email
     window.location.href = emailToSend;
@@ -31,39 +49,81 @@ function SendEmail(props) {
           flexDirection: "column",
           width: "600px", // Desired width
           margin: "0 auto", // Center horizontally
-          boxSizing: "border-box"
+          boxSizing: "border-box",
         }}
       >
         <Typography
-          variant="h5"
           style={{
             fontFamily: "Sectra",
             fontSize: "24pt",
             fontWeight: 600,
-            margin: "16pt 0"
+            marginTop: "16pt"
           }}
         >
-          Thanks for filling out the health assessment quiz
+          {headingText}
         </Typography>
+
         <Typography
-          variant="body1"
-          style={{ fontFamily: "Graphik", fontSize: "16pt", margin: "16pt 0" }}
+          style={{ 
+            fontFamily: "Graphik", 
+            fontSize: "14pt", 
+            marginBottom: "16pt"
+          }}
         >
-          The final step is to share your answers with me, by sending them to me
-          via email.
-          <ol>
-            <li>
-              The file named "name_data.csv" should have automatically
-              downloaded. If not, you can still click the "Export data" button.
-            </li>
-            <br />
-            <li>
-              Click the "Send email" button and your default email browser
-              should open. All you need to do is just click "Send" and we are
-              done! Thank you!
-            </li>
-          </ol>
+          {bodyText}
         </Typography>
+        
+        <Box style={{ display: "flex", alignItems: "center"}}>
+        <Checkbox
+          checked={isChecked}
+          onChange={(event) => setIsChecked(event.target.checked)}
+          color="primary"
+          
+        />
+      <Typography
+        style={{
+          fontFamily: "Graphik",
+          fontSize: "14pt",
+          marginLeft: "8px",
+        }}
+      >
+        {props.selectedLanguage === "eng" ? (
+          <>
+            By checking this box, you agree to the{" "}
+            <a
+              href="https://www.laivina.com/terms-and-condition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Terms and Conditions
+            </a>
+            .
+          </>
+        ) : (
+          <>
+            Atzīmējot šo lauciņu, Tu piekrīti Elizabetes Laiviņas{" "}
+            <a
+              href="https://www.laivina.com/terms-and-condition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lietošanas noteikumiem  
+            </a>
+            &nbsp;un&nbsp;
+            <a
+              href="https://www.laivina.com/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            datu privātuma politikai
+            </a>
+            .
+          </>
+        )}
+      </Typography>
+
+      </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -73,8 +133,8 @@ function SendEmail(props) {
             marginTop: "18px" // Add margin between this group and the next
           }}
         >
-          <MyButton onClick={props.onClick} buttonText="Export Data" />
-          <MyButton onClick={handleSendEmail} buttonText="Send Email" />
+          <MyButton onClick={props.onClick} buttonText={props.selectedLanguage === "eng" ? "Export results" : "Eksportēt rezultātus"} />
+          <MyButton onClick={handleSendEmail} buttonText={props.selectedLanguage === "eng" ? "Send Email" : "Nosūtīt epastu"} />
         </Box>
       </Box>
     </div>

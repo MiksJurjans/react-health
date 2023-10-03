@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import QuestionList from "./QuestionList";
+import QuestionListLv from "./QuestionListLV"
 import QuestionRenderer from "./QuestionRenderer";
 import { saveAs } from "file-saver";
 import SendEmail from "./SendEmail";
@@ -26,6 +27,12 @@ function App() {
   const [reachedEnd, setReachedEnd] = useState(false);
   const [questionnaireStarted, setQuestionnaireStarted] = useState(false);
   const [userName, setUserName] = useState("");
+  const [language, setLanguage] = useState("lat");
+
+  // // Set the language to ENG or LV
+  const handleLanguageChange = (selectedLanguage) => {
+    setLanguage(selectedLanguage);
+  };
 
   // To start the questionnaire
   const handleStartQuestionnaire = () => {
@@ -33,8 +40,10 @@ function App() {
       // When the "Start questionnaire!" button is clicked, set the current question index to 0 to start the questionnaire
       setCurrentQuestionIndex(0);
       setQuestionnaireStarted(true);
-    } else {
+    } else if (language === "eng") {
       alert("Please enter your name!");
+    } else if (language === "lat") {
+      alert("Lūdzu ieraksti savu vārdu!");
     }
   };
 
@@ -118,70 +127,76 @@ function App() {
     // Skip question 1 to question 7
     if (
       currentQuestionIndex === 0 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(6);
     }
     // Skip question 4 to question 7
     else if (
       currentQuestionIndex === 3 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(6);
     }
     // Skip question 12 to question 18
     else if (
       currentQuestionIndex === 11 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(17);
     }
     // Skip question 15 to question 18
     else if (
       currentQuestionIndex === 14 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(17);
     }
     // Skip question 19 to question 23
     else if (
       currentQuestionIndex === 18 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(22);
     }
     // Skip question 27 to question 30
     else if (
       currentQuestionIndex === 26 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(29);
     }
     // Skip question 41 to question 48
     else if (
       currentQuestionIndex === 40 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(47);
     }
     // Skip question 43 to question 45
     else if (
       currentQuestionIndex === 42 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(44);
     }
     // Skip question 45 to question 48
     else if (
       currentQuestionIndex === 44 &&
-      answerText[currentQuestion.identifier] === "No"
+      (answerText[currentQuestion.identifier] === "No" || answerText[currentQuestion.identifier] === "Nē")
     ) {
       setCurrentQuestionIndex(47);
     }
     // Handle errors
     else if (answers[currentQuestion.identifier] === "") {
+      if (language === "eng") {
       alert("Please answer the current question before proceeding.");
       return; // Do not proceed if the question is not answered
+      }
+      else {
+      alert("Lūdzu atbildi uz jautājumu pirms turpini aptauju.");
+      return; // Do not proceed if the question is not answered
+      }
     }
     // Continue as normal if no skipping conditions met
     else if (currentQuestionIndex === QuestionList.length - 1) {
@@ -195,11 +210,18 @@ function App() {
     }
   };
 
-  const currentQuestion = QuestionList[currentQuestionIndex];
+  // Based on language, determine the right question list to use.
+  let currentQuestion;
+  if (language === "lat") {
+    currentQuestion = QuestionListLv[currentQuestionIndex];
+  } else {
+    currentQuestion = QuestionList[currentQuestionIndex];
+  };
 
   // Prepare data to be exported as csv
   function exportToCSV(data, filename) {
     const csv =
+      "\uFEFF" + // BOM (Byte Order Mark) to indicate UTF-8 encoding (for retaining Latvian characters)
       Object.keys(data[0]).join(";") +
       "\n" +
       data.map((item) => Object.values(item).join(";")).join("\n");
@@ -225,10 +247,11 @@ function App() {
     setUserName(newName);
   };
 
+
   return (
     <div>
       {reachedEnd ? (
-        <SendEmail onClick={exportAllDataToCSV} />
+        <SendEmail onClick={exportAllDataToCSV} selectedLanguage={language} />
       ) : questionnaireStarted ? (
         currentQuestion && (
           <QuestionRenderer
@@ -245,6 +268,7 @@ function App() {
             onSelectedOptionsChange={handleSelectedOptionsChange}
             sliderValue={sliderValue}
             onSliderChange={handleSliderChange}
+            selectedLanguage={language}
           />
         )
       ) : (
@@ -252,6 +276,8 @@ function App() {
           userName={userName}
           onNameChange={handleUserName}
           onClick={handleStartQuestionnaire}
+          onSelectLanguage={handleLanguageChange}
+          selectedLanguage={language}
         />
       )}
     </div>
