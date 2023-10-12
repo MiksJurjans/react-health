@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "static/css/main.f1e738e5.css",
-    "main.js": "static/js/main.bd2c0ba4.js",
-    "static/media/background.png": "static/media/background.f1e58420a6cece30e671.png",
-    "static/media/male.jpg": "static/media/male.74803ff830589c81ed9f.jpg",
-    "static/media/female.jpg": "static/media/female.8ac8c7cf98fae7592f39.jpg",
-    "static/media/stool_type.jpg": "static/media/stool_type.f86ad016c744cff42d4e.jpg",
-    "static/media/file.otf": "static/media/file.dd3d1fe65012c477aeda.otf",
-    "static/media/file.ttf": "static/media/file.6a3fc5100b93f61b5cd6.ttf",
-    "static/media/Laivina_temp_logo.png": "static/media/Laivina_temp_logo.5881f70c1b00d0bd51bb.png",
-    "index.html": "index.html",
-    "main.f1e738e5.css.map": "static/css/main.f1e738e5.css.map",
-    "main.bd2c0ba4.js.map": "static/js/main.bd2c0ba4.js.map"
+    "main.css": "/static/css/main.8733cb01.css",
+    "main.js": "/static/js/main.ab429b6a.js",
+    "static/media/background.png": "/static/media/background.f1e58420a6cece30e671.png",
+    "static/media/male.jpg": "/static/media/male.74803ff830589c81ed9f.jpg",
+    "static/media/female.jpg": "/static/media/female.8ac8c7cf98fae7592f39.jpg",
+    "static/media/stool_type.jpg": "/static/media/stool_type.f86ad016c744cff42d4e.jpg",
+    "static/media/file.otf": "/static/media/file.dd3d1fe65012c477aeda.otf",
+    "static/media/file.ttf": "/static/media/file.6a3fc5100b93f61b5cd6.ttf",
+    "static/media/Laivina_temp_logo.png": "/static/media/Laivina_temp_logo.5881f70c1b00d0bd51bb.png",
+    "index.html": "/index.html",
+    "main.8733cb01.css.map": "/static/css/main.8733cb01.css.map",
+    "main.ab429b6a.js.map": "/static/js/main.ab429b6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1e738e5.css",
-    "static/js/main.bd2c0ba4.js"
+    "static/css/main.8733cb01.css",
+    "static/js/main.ab429b6a.js"
   ]
 }
